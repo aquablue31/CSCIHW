@@ -8,8 +8,13 @@ package HW1;
 // HELLO
 // 01234
 public class Replace {
-    public String charReplace(String s, int x, char z) {
-        return null;
+    public String charReplace(String s, int x, char z) {     
+                StringBuilder sb = new StringBuilder(s);
+                // replace character at the specified position
+                sb.setCharAt(x, z);
+                s = sb.toString();
+        
+                return s; 
         
     }
     
