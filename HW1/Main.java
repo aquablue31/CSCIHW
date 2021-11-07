@@ -14,11 +14,11 @@ public class Main {
         //a.story(name, age, favoriteColor); 
  
         Replace r = new Replace();
-        r.charReplace("I WANT CAKE", 7, 'C'); 
+        r.charReplace("i WANT CAKE", 7, 'C'); 
         // print the modified string
-        System.out.println(r.charReplace("I WANT CAKE", 7, 'C'));
+        System.out.println(r.charReplace("i WANT CAKE", 7, 'C'));
 
-//   s = "I WANT CAKE"; x = 7; z = 'C';
+//   s = "i WANT CAKE"; x = 7; z = 'C';
 
         // Create an object that will make a Pyramid (see Pyramid.java for more info)
 
