@@ -1,5 +1,8 @@
 package HW3;
+import java.lang.management.BufferPoolMXBean;
 import java.util.Scanner;
+
+import javax.sql.rowset.spi.SyncResolver;
 
 public class Loops {
 
@@ -15,18 +18,34 @@ public class Loops {
     //eeat -> true
     //eeeat -> true
     //eeeeat -> false
+   
+        public static boolean loopE(String str){
+                int count=0;
+              
+                for (int i=0; i<str.length(); i++){
+                  String sub= str.substring(i,i+1); 
+                  if (sub.equals("e")) 
+                    count ++;
+                }
+                return (count>=1 && count<=3);
+              }; 
+        
+        
 
-    public static boolean loopE(String str){
-        return true; // <- this should be changed 
-    }
 
     //Given a String str and int n return a larger string
     //that is n copies of the original string 
     //Ex.
     //stringTimes("Code",2) ->"CodeCode"
     //stringTimes("Code",4) ->"CodeCodeCodeCode"
+
     public static String stringTimes(String str, int n) {
-        return null; // <- this should be changed 
+        String s = "";
+        for ( int i = 0; i < n; i++ )
+        {
+            s = s + str;
+        }
+        return s; // <- this should be changed 
     } 
 
     //Create a method Given a string, return the string where all of the "z"
@@ -36,9 +55,27 @@ public class Loops {
     //stringT("zHelloz") -> "zHelloz"
     //stringT("nozthaznks") -> "nothanks"
     //stringT("xksiazdjaasldzsajzasdz") -> "xksiadjaasldsajasdz"
-    public static String stringZ(String str){
-        return null; // <- this should be changed 
-    }
+        public static String stringZ(String str){
+            for (int i = 0 ;i < str.length();){
+                if (str.substring(0,1).equals("z") && str.substring(str.length()-1).equals("z"))
+                {
+                    return str = "z"+ str.replace("z", "")+"z";
+                }
+                else if (str.substring(0,1).equals("z"))
+                {
+                    return str ="z"+ str.replace("z", "");
+                }
+                else if(str.substring(str.length()-1).equals("z"))
+                {
+                    return str =str.replace("z", "") +"z";
+                }
+                else{
+                   return str= str.replace("z", "");
+                }
+            }
+            return str;      
+        }; // <- this should be changed 
+    
 
     //Create a method that contains a while loop that allows for
     //The user to input numbers until the number 0 is entered. Each time a number is 
@@ -66,11 +103,38 @@ public class Loops {
     // Number: 0
     // TOTAL ENDED --- The total is 27.
     public static void sums(){
+        System.out.println("I will add up the numbers you give me....");
+        Scanner enter = new Scanner(System.in);
+        System.out.println("Number:");
+        int data = enter.nextInt();
+        int sum = 0;
+        while (data!=0) {
+            sum += data;
+            System.out.println("The total so far is:");
+            System.out.println(sum);
+            System.out.println("Number:");
+            data = enter.nextInt();
+        }
+        System.out.println("TOTAL ENDED --- ");
+        System.out.println("The total is "+ sum);
+    {   
+        enter.close();
     }
+}
+        
 
     public static void main(String[] args) {
         // Add code to help test your methods here
-
+        System.out.println(Loops.loopE("eat"));
+		System.out.println(Loops.loopE("eeat"));
+        System.out.println(Loops.loopE("eeeat"));
+		System.out.println(Loops.loopE("eeeeat"));
+        System.out.println(stringTimes("Code", 2));
+        System.out.println(stringTimes("Code", 4));
+        System.out.println(stringZ("zHelloz"));
+        System.out.println(stringZ("nozthaznks"));
+        System.out.println(stringZ("xksiazdjaasldzsajzasdz"));
+        sums();
     }
     
 }
