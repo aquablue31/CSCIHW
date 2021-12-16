@@ -35,7 +35,7 @@ public class Arrays {
         sumArray.add(data);
         System.out.println(sumArray);
         System.out.println("Number:");
-        System.out.println("The total right now is:");
+        System.out.println("The total so far is:");
         System.out.println(sum);
         data = s.nextInt();
     }
