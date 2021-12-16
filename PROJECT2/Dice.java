@@ -1,8 +1,6 @@
 package PROJECT2;
-
 import java.util.Random;
 import java.util.Scanner;
-
 // Write a program that will generate a selected amount of Dice and toss them into an array.
 // For example:
 // 10 Dice
@@ -22,7 +20,6 @@ import java.util.Scanner;
 // 2 (1 1 1) 4 (5 5 5) 3 6
 // Again Marking each group is optional. The only thing I require is the first group to be marked.
 // 2 (1 1 1) 4 5 5 5 3 6
-
 // Hint 1: I have given you some code to get started but you will need to fill in the rest. A die has 6 sides.
 // Hint 2: You will want to make int array to hold the values
 // Hint 3: You might find it helpful to create running tally variables such as:
@@ -30,20 +27,42 @@ import java.util.Scanner;
 //         This will help you keep track of runs when they occur
 // Hint 4: To print the output you might want to use a for loop and loop through each index and use the variables above to 
 //         Denote if you should insert a "(" or ")"
-
-
 // My hints are related to the way I completed the code but there are many ways to do it! 
-
-
 public class Dice {
     Random generator = new Random();
     Scanner keyboard = new Scanner(System.in);
-
-    public void DiceCount() {
-        int sides = 6;
+    public void DiceCount() 
+    {
+        int noofsides = 6;
+        int greatestlength = 1;
+        int currentLength = 1;
+        int longestLengthIndex = 0;
+        int currentLengthIndex = 1;
+        int currentNum = -1;
+        System.out.println("How many dice would you like to roll?:");
+        int dice = keyboard.nextInt();
+        int[] diceroll = new int[dice];
+        for(int i = 0; i<dice; i++){
+            diceroll[i] = generator.nextInt(noofsides);
+            System.out.print(diceroll[i] + " ");
+            if(currentNum==diceroll[i]){
+                currentLength++;
+                if(currentLength>greatestlength){
+                    longestLengthIndex=currentLengthIndex;
+                    greatestlength=currentLength;
+                } 
+            }else{
+                currentLength=1;
+                currentLengthIndex=i;
+            }
+            currentNum=diceroll[i];
+        }
+        System.out.println();
+        for (int i = 0; i < dice; i++)
+            System.out.print((i == longestLengthIndex ? "(" : "") + diceroll[i] + (i == (longestLengthIndex + greatestlength - 1) ? ") " : " "));
     }
-
     public static void main(String[] args) {
         Dice die = new Dice();
+        die.DiceCount();
     }
 }
