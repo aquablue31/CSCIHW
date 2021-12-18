@@ -14,7 +14,7 @@ public class Main {
       if (play.getLives() == 0) {
         System.out.println("Oh no, you died.");
         System.exit(0);
-      } // get lives 
+      } // get lives + death
       System.out.println("Current Place in Ladder: " + ladder.selections.size());
       if (!ladder.calcPanel(laddercreate, ladder.selections))
         play.death(); 
