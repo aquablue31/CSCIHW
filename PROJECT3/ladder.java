@@ -37,7 +37,7 @@ public class Ladder {
         System.out.println("R Selected");
         return convertedSelection;
       } 
-      System.out.println("Invalid Selction please select again");
+      System.out.println("Invalid Selection. You must selection again.");
     } 
     return convertedSelection;
   }
@@ -78,7 +78,7 @@ public class Ladder {
     System.out.println("Oh no, you lost one life.");
     return false;
   }
-  
+  // ladder
   public void printLadder() {
     try {
       System.out.println("|||||| ---- Start");
@@ -92,7 +92,7 @@ public class Ladder {
       System.out.println("ERROR???");
     } 
   }
-  
+  // current ladder
   public void printCurrentLadder() {
     System.out.println("|||||| ---- Start");
     for (int i = 0; i < this.selections.size(); i++) {
@@ -116,3 +116,4 @@ public class Ladder {
     } 
   }
 }
+// methods...
