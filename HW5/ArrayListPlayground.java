@@ -9,8 +9,8 @@ public class ArrayListPlayground {
       nums(); 
       Week();
       inpution(); 
-    }
- // Question 1
+    } 
+ // Question 1 NUMS 
     // Write Java statements that do the following:
     // a) Declare an arrayList nums of 15 elements of type int.
     // b) Output the value of the tenth element of the array nums.
@@ -19,12 +19,12 @@ public class ArrayListPlayground {
    public static void nums() {
         System.out.println("Here is my array list of 15 numbers: ");
         int n = 15;
-        // Declaring the ArrayList with
-        // initial size n
+        // declaring the arraylist
+        // with the initial size of n 
         ArrayList<Integer> numbers = new ArrayList<Integer>(n);
  
         // Appending new elements at
-        // the end of the list
+        // end of list.
         for (int i = 1; i <= n; i++)
             numbers.add(i);
  
@@ -46,7 +46,7 @@ public class ArrayListPlayground {
     // b) output each of the days of the week
     // c) output the days of the week we have class
     // d) change the arrayList to start on Sunday
-
+// week 
     public static void Week(){
       ArrayList<String> weekList = new ArrayList<String>();
         
@@ -92,7 +92,7 @@ public class ArrayListPlayground {
     // NOTE: If the ArrayList is NOT divisable by 3 ask the user for more numbers and add them until it is
     // ArrayList Size: 7
     // Please enter 2 more numbers to create the matrix...
-    // 
+    // ARRAYLIST WITH MATRIX 
 public static void inpution() {
         ArrayList<Integer> list = new ArrayList<Integer>();
         Scanner scan = new Scanner(System.in);
