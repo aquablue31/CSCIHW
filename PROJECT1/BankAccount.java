@@ -72,16 +72,20 @@ public class BankAccount {
     // r = annual interest rate
     // n = # of times its compounded
     // PEMDAS
+    
+    //calc interest
     public void calcInterest(double p, int t, double r, int n){
         double amount = p * Math.pow(1 + (r / n), n*t);
         double compinterest = amount - p;
         System.out.println("Compound Interest after "+ t + " years: "+ compinterest);
         System.out.println("Amount after "+ t + " years: "+ amount);
     }
+    //simple interest
     public void simpleInterest(double p, int t, double r){
         double simpleInt = (p * r* t*1/100);
         System.out.println("Simple Interest after "+ t + " years: "+ simpleInt);
     }
+    //investment
     public void investment(double balance, double r, double targetBalance){
         int year = 0; 
         while(balance<= targetBalance){
@@ -93,7 +97,7 @@ public class BankAccount {
         System.out.println("Investment doubled After "+ year + " years.");
     }
 
-    //
+    // savingsaccount
     public void savingsAccount(double initialValue){
             if(initialValue>=1000){
             int value;
@@ -125,6 +129,7 @@ public class BankAccount {
             System.out.println("Invalid");
         }
     }
+    //menu
     public static int menu() {
         input = new Scanner(System.in);
         int selection;
