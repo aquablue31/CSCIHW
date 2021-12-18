@@ -19,7 +19,7 @@ public class Ladder {
     this.selections = new ArrayList<>();
     this.panels = panel;
   }
-  
+  // L AND R 
   public int getSelection() {
     int convertedSelection = 0;
     Scanner keyboard = new Scanner(System.in);
